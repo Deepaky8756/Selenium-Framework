@@ -13,10 +13,13 @@ public class testcase1 extends baseTest {
   @Test
   public void f1() {
 	  hm.SignInButton();
+	  System.out.println("First test executed");
   }
   @Test
   public void f2() {
-	  boolean condition = true; // This is deliberately set to 'true'
+	  boolean condition = false; // This is deliberately set to 'true'
       Assert.assertFalse(condition, "The condition is true, so the test will fail.");
+	  System.out.println("Second test executed");
+
   }
 }

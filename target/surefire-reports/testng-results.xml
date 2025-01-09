@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results retried="1" ignored="1" total="4" passed="1" failed="1" skipped="0">
+<testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-01-06T21:05:38 IST" name="Suite" finished-at="2025-01-06T21:05:55 IST" duration-ms="17567">
+  <suite started-at="2025-01-09T21:17:32 IST" name="Suite" finished-at="2025-01-09T21:17:39 IST" duration-ms="7264">
     <groups>
     </groups>
-    <test started-at="2025-01-06T21:05:38 IST" name="Test" finished-at="2025-01-06T21:05:55 IST" duration-ms="17567">
+    <test started-at="2025-01-09T21:17:32 IST" name="Test" finished-at="2025-01-09T21:17:39 IST" duration-ms="7264">
       <class name="qa.test.testcase1">
-        <test-method is-config="true" signature="beforeTestMethod()[pri:0, instance:qa.test.testcase1@131774fe]" started-at="2025-01-06T21:05:38 IST" name="beforeTestMethod" finished-at="2025-01-06T21:05:38 IST" duration-ms="105" status="PASS">
+        <test-method is-config="true" signature="beforeTestMethod()[pri:0, instance:qa.test.testcase1@3e58a80e]" started-at="2025-01-09T21:17:32 IST" name="beforeTestMethod" finished-at="2025-01-09T21:17:32 IST" duration-ms="127" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeTestMethod -->
-        <test-method is-config="true" signature="beforeMethod(java.lang.String)[pri:0, instance:qa.test.testcase1@131774fe]" started-at="2025-01-06T21:05:38 IST" name="beforeMethod" finished-at="2025-01-06T21:05:49 IST" duration-ms="10747" status="PASS">
+        <test-method is-config="true" signature="beforeMethod(java.lang.String)[pri:0, instance:qa.test.testcase1@3e58a80e]" started-at="2025-01-09T21:17:32 IST" name="beforeMethod" finished-at="2025-01-09T21:17:35 IST" duration-ms="3016" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -22,22 +22,22 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method signature="f1()[pri:0, instance:qa.test.testcase1@131774fe]" started-at="2025-01-06T21:05:49 IST" name="f1" finished-at="2025-01-06T21:05:50 IST" duration-ms="884" status="PASS">
+        <test-method signature="f1()[pri:0, instance:qa.test.testcase1@3e58a80e]" started-at="2025-01-09T21:17:35 IST" name="f1" finished-at="2025-01-09T21:17:36 IST" duration-ms="1100" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- f1 -->
-        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:qa.test.testcase1@131774fe]" started-at="2025-01-06T21:05:50 IST" name="afterMethod" finished-at="2025-01-06T21:05:50 IST" duration-ms="292" status="PASS">
+        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:qa.test.testcase1@3e58a80e]" started-at="2025-01-09T21:17:36 IST" name="afterMethod" finished-at="2025-01-09T21:17:36 IST" duration-ms="341" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=f1 status=SUCCESS method=testcase1.f1()[pri:0, instance:qa.test.testcase1@131774fe] output={null}]]]>
+                <![CDATA[[TestResult name=f1 status=SUCCESS method=testcase1.f1()[pri:0, instance:qa.test.testcase1@3e58a80e] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-        <test-method is-config="true" signature="beforeMethod(java.lang.String)[pri:0, instance:qa.test.testcase1@131774fe]" started-at="2025-01-06T21:05:50 IST" name="beforeMethod" finished-at="2025-01-06T21:05:51 IST" duration-ms="1285" status="PASS">
+        <test-method is-config="true" signature="beforeMethod(java.lang.String)[pri:0, instance:qa.test.testcase1@3e58a80e]" started-at="2025-01-09T21:17:36 IST" name="beforeMethod" finished-at="2025-01-09T21:17:38 IST" duration-ms="1905" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -48,134 +48,22 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method retried="true" signature="f2()[pri:0, instance:qa.test.testcase1@131774fe]" started-at="2025-01-06T21:05:51 IST" name="f2" finished-at="2025-01-06T21:05:51 IST" duration-ms="10" status="SKIP">
-          <exception class="java.lang.AssertionError">
-            <message>
-              <![CDATA[The condition is true, so the test will fail. expected [false] but found [true]]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: The condition is true, so the test will fail. expected [false] but found [true]
-at org.testng.Assert.fail(Assert.java:111)
-at org.testng.Assert.failNotEquals(Assert.java:1578)
-at org.testng.Assert.assertFalse(Assert.java:79)
-at qa.test.testcase1.f2(testcase1.java:20)
-at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
-at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:686)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
-at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
-at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:992)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
-at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
-at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-at org.testng.TestRunner.privateRun(TestRunner.java:739)
-at org.testng.TestRunner.run(TestRunner.java:614)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
-at org.testng.SuiteRunner.run(SuiteRunner.java:312)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
-at org.testng.TestNG.runSuites(TestNG.java:1112)
-at org.testng.TestNG.run(TestNG.java:1079)
-at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:308)
-at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:71)
-at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:113)
-at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385)
-at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
-at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
-at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.AssertionError -->
+        <test-method signature="f2()[pri:0, instance:qa.test.testcase1@3e58a80e]" started-at="2025-01-09T21:17:38 IST" name="f2" finished-at="2025-01-09T21:17:38 IST" duration-ms="3" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- f2 -->
-        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:qa.test.testcase1@131774fe]" started-at="2025-01-06T21:05:51 IST" name="afterMethod" finished-at="2025-01-06T21:05:51 IST" duration-ms="184" status="PASS">
+        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:qa.test.testcase1@3e58a80e]" started-at="2025-01-09T21:17:38 IST" name="afterMethod" finished-at="2025-01-09T21:17:39 IST" duration-ms="368" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=f2 status=SKIP method=testcase1.f2()[pri:0, instance:qa.test.testcase1@131774fe] output={null}]]]>
+                <![CDATA[[TestResult name=f2 status=SUCCESS method=testcase1.f2()[pri:0, instance:qa.test.testcase1@3e58a80e] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-        <test-method is-config="true" signature="beforeMethod(java.lang.String)[pri:0, instance:qa.test.testcase1@131774fe]" started-at="2025-01-06T21:05:51 IST" name="beforeMethod" finished-at="2025-01-06T21:05:54 IST" duration-ms="2875" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[Chrome]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeMethod -->
-        <test-method signature="f2()[pri:0, instance:qa.test.testcase1@131774fe]" started-at="2025-01-06T21:05:54 IST" name="f2" finished-at="2025-01-06T21:05:54 IST" duration-ms="2" status="FAIL">
-          <exception class="java.lang.AssertionError">
-            <message>
-              <![CDATA[The condition is true, so the test will fail. expected [false] but found [true]]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: The condition is true, so the test will fail. expected [false] but found [true]
-at org.testng.Assert.fail(Assert.java:111)
-at org.testng.Assert.failNotEquals(Assert.java:1578)
-at org.testng.Assert.assertFalse(Assert.java:79)
-at qa.test.testcase1.f2(testcase1.java:20)
-at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
-at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:686)
-at org.testng.internal.invokers.TestInvoker.retryFailed(TestInvoker.java:269)
-at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:76)
-at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:992)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
-at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
-at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-at org.testng.TestRunner.privateRun(TestRunner.java:739)
-at org.testng.TestRunner.run(TestRunner.java:614)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
-at org.testng.SuiteRunner.run(SuiteRunner.java:312)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
-at org.testng.TestNG.runSuites(TestNG.java:1112)
-at org.testng.TestNG.run(TestNG.java:1079)
-at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:308)
-at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:71)
-at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:113)
-at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385)
-at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
-at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
-at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.AssertionError -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- f2 -->
-        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:qa.test.testcase1@131774fe]" started-at="2025-01-06T21:05:55 IST" name="afterMethod" finished-at="2025-01-06T21:05:55 IST" duration-ms="267" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=f2 status=FAILURE method=testcase1.f2()[pri:0, instance:qa.test.testcase1@131774fe] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-        <test-method is-config="true" signature="afterTestMethod()[pri:0, instance:qa.test.testcase1@131774fe]" started-at="2025-01-06T21:05:55 IST" name="afterTestMethod" finished-at="2025-01-06T21:05:55 IST" duration-ms="232" status="PASS">
+        <test-method is-config="true" signature="afterTestMethod()[pri:0, instance:qa.test.testcase1@3e58a80e]" started-at="2025-01-09T21:17:39 IST" name="afterTestMethod" finished-at="2025-01-09T21:17:39 IST" duration-ms="355" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterTestMethod -->
