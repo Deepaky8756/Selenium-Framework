@@ -18,8 +18,6 @@ import com.aventstack.extentreports.Status;
 import com.aventstack.extentreports.markuputils.ExtentColor;
 import com.aventstack.extentreports.markuputils.MarkupHelper;
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
-import com.sun.org.apache.bcel.internal.classfile.Method;
-
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 
