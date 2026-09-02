@@ -110,35 +110,7 @@ pipeline {
 
         stage('Verify Reports') {
             steps {
-                script {
-                    if (isUnix()) {
-                        sh '''
-                            echo "===== TARGET ====="
-                            ls -la target || true
-                            echo "===== TEST OUTPUT ====="
-                            ls -la test-output || true
-                            echo "===== HTML REPORTS ====="
-                            find target -name "*.html" -print || true
-                            echo "===== JSON REPORTS ====="
-                            find target -name "*.json" -print || true
-                            echo "===== XML REPORTS ====="
-                            find target -name "*.xml" -print || true
-                        '''
-                    } else {
-                        bat '''
-                            echo ===== TARGET =====
-                            if exist target dir target
-                            echo ===== TEST OUTPUT =====
-                            if exist test-output dir test-output
-                            echo ===== HTML REPORTS =====
-                            if exist target dir /s /b target\*.html
-                            echo ===== JSON REPORTS =====
-                            if exist target dir /s /b target\*.json
-                            echo ===== XML REPORTS =====
-                            if exist target dir /s /b target\*.xml
-                        '''
-                    }
-                }
+                echo 'Test execution completed. Reports and artifacts will be collected in the post section.'
             }
         }
     }
