@@ -128,10 +128,12 @@
                     <!--    <suiteXmlFile>src/test/java/xml/SmokeTest.xml</suiteXmlFile> -->
                     <!-- </suiteXmlFiles> -->
 
-                    <includes>
-                        <!-- Only run specified test classes; **/ allows matching any directory structure -->
-                        <include>**/TestRunnerSmoke.java</include>
-                    </includes>
+                    <!--
+                        Jenkins/local execution can select a runner with:
+                        mvn test -Dtest=TestRunnerSmoke
+                        mvn test -Dtest=TestRunnerRegression
+                        mvn test -Dtest=TestRunnerAll
+                    -->
                 </configuration>
             </plugin>
         </plugins>

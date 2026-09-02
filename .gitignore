@@ -41,3 +41,6 @@ build/
 # Test reports and output
 testReports/
 test-output/
+
+# Jenkins
+# Jenkinsfile is intentionally tracked. Generated Jenkins workspace output remains untracked.

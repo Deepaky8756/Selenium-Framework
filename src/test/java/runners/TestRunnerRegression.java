@@ -8,11 +8,11 @@ import io.cucumber.testng.CucumberOptions;
         features = {"src/test/java/features"},
         glue = {"stepDefinitions"},
         plugin = {
-                "pretty", // More readable output in the console
-                "html:target/cucumber-report-regression.html", // HTML report
-                "json:target/cucumber-report-regression.json"  // JSON report
+                "pretty",
+                "html:target/cucumber-report-regression.html",
+                "json:target/cucumber-report-regression.json"
         },
-        dryRun = false // If true, checks for missing step definitions without running tests
+        dryRun = false
 )
 public class TestRunnerRegression extends AbstractTestNGCucumberTests {
 }
