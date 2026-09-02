@@ -15,14 +15,10 @@ pipeline {
     }
 
     parameters {
-        choice(name: 'TEST_SUITE', choices: ['Smoke', 'Regression', 'All'],
-               description: 'Select the test suite to execute')
-        choice(name: 'BROWSER', choices: ['chrome', 'firefox', 'edge'],
-               description: 'Select one browser for this build')
-        booleanParam(name: 'HEADLESS', defaultValue: true,
-                     description: 'Run browser in headless mode')
-        choice(name: 'TEST_ENV', choices: ['QA', 'UAT'],
-               description: 'Select the application environment')
+        choice(name: 'TEST_SUITE', choices: ['Smoke', 'Regression', 'All'], description: 'Select the test suite to execute')
+        choice(name: 'BROWSER', choices: ['chrome', 'firefox', 'edge'], description: 'Select one browser for this build')
+        booleanParam(name: 'HEADLESS', defaultValue: true, description: 'Run browser in headless mode')
+        choice(name: 'TEST_ENV', choices: ['QA', 'UAT'], description: 'Select the application environment')
     }
 
     environment {
@@ -30,27 +26,23 @@ pipeline {
     }
 
     stages {
-
         stage('Clean Workspace') {
-            steps {
-                deleteDir()
-            }
+            steps { deleteDir() }
         }
 
         stage('Checkout') {
             steps {
                 checkout scm
-                echo "Job: ${env.JOB_NAME}"
-                echo "Build: ${env.BUILD_NUMBER}"
-                echo "Branch: ${env.GIT_BRANCH ?: 'N/A'}"
-                echo "Commit: ${env.GIT_COMMIT ?: 'N/A'}"
+                echo "Job    : ${env.JOB_NAME}"
+                echo "Build  : ${env.BUILD_NUMBER}"
+                echo "Branch : ${env.GIT_BRANCH ?: 'N/A'}"
+                echo "Commit : ${env.GIT_COMMIT ?: 'N/A'}"
             }
         }
 
         stage('Verify Environment') {
             steps {
                 echo "Suite=${params.TEST_SUITE}, Browser=${params.BROWSER}, Headless=${params.HEADLESS}, Environment=${params.TEST_ENV}"
-
                 script {
                     if (isUnix()) {
                         sh '''
@@ -106,9 +98,7 @@ pipeline {
             steps {
                 script {
                     def runnerClass = "TestRunner${params.TEST_SUITE}"
-
                     echo "Running ${runnerClass} on ${params.BROWSER}, headless=${params.HEADLESS}, environment=${params.TEST_ENV}"
-
                     if (isUnix()) {
                         sh "mvn clean test -Dtest=${runnerClass} -Dbrowser=${params.BROWSER} -Dheadless=${params.HEADLESS} -DtestEnv=${params.TEST_ENV}"
                     } else {
@@ -127,8 +117,12 @@ pipeline {
                             ls -la target || true
                             echo "===== TEST OUTPUT ====="
                             ls -la test-output || true
-                            echo "===== REPORTS ====="
-                            find target -type f \( -name "*.html" -o -name "*.json" -o -name "*.xml" \) || true
+                            echo "===== HTML REPORTS ====="
+                            find target -name "*.html" -print || true
+                            echo "===== JSON REPORTS ====="
+                            find target -name "*.json" -print || true
+                            echo "===== XML REPORTS ====="
+                            find target -name "*.xml" -print || true
                         '''
                     } else {
                         bat '''
@@ -136,12 +130,12 @@ pipeline {
                             if exist target dir target
                             echo ===== TEST OUTPUT =====
                             if exist test-output dir test-output
-                            echo ===== REPORTS =====
-                            if exist target (
-                                dir /s /b target\*.html
-                                dir /s /b target\*.json
-                                dir /s /b target\*.xml
-                            )
+                            echo ===== HTML REPORTS =====
+                            if exist target dir /s /b target\*.html
+                            echo ===== JSON REPORTS =====
+                            if exist target dir /s /b target\*.json
+                            echo ===== XML REPORTS =====
+                            if exist target dir /s /b target\*.xml
                         '''
                     }
                 }
@@ -151,14 +145,12 @@ pipeline {
 
     post {
         always {
-            echo "Collecting reports, screenshots and test artifacts..."
-
+            echo 'Collecting reports, screenshots and test artifacts...'
             archiveArtifacts(
                 artifacts: 'target/**/*.html,target/**/*.json,target/**/*.xml,target/screenshots/**/*,target/test-results/**/*,test-output/**/*,**/*.log',
                 allowEmptyArchive: true,
                 fingerprint: true
             )
-
             junit(
                 testResults: 'target/**/*.xml',
                 allowEmptyResults: true,
@@ -167,26 +159,24 @@ pipeline {
         }
 
         success {
-            echo "TEST EXECUTION SUCCESSFUL"
-            echo "Suite=${params.TEST_SUITE}, Browser=${params.BROWSER}, Environment=${params.TEST_ENV}"
+            echo "TEST EXECUTION SUCCESSFUL - Suite=${params.TEST_SUITE}, Browser=${params.BROWSER}, Environment=${params.TEST_ENV}"
         }
 
         unstable {
-            echo "TEST EXECUTION UNSTABLE - Check reports and screenshots."
+            echo 'TEST EXECUTION UNSTABLE - Check reports and screenshots.'
         }
 
         failure {
-            echo "TEST EXECUTION FAILED"
-            echo "Suite=${params.TEST_SUITE}, Browser=${params.BROWSER}, Environment=${params.TEST_ENV}"
-            echo "Check Console Output, Cucumber reports, screenshots and JUnit/TestNG results."
+            echo "TEST EXECUTION FAILED - Suite=${params.TEST_SUITE}, Browser=${params.BROWSER}, Environment=${params.TEST_ENV}"
+            echo 'Check Console Output, Cucumber reports, screenshots and JUnit/TestNG results.'
         }
 
         aborted {
-            echo "Jenkins build was aborted."
+            echo 'Jenkins build was aborted.'
         }
 
         cleanup {
-            echo "Jenkins pipeline execution completed."
+            echo 'Jenkins pipeline execution completed.'
         }
     }
 }
